@@ -1,17 +1,29 @@
-This README.md file is displayed on your project page. You should edit this 
-file to describe your project, including instructions for building and 
-running the project, pointers to the license under which you are making the 
-project available, and anything else you think would be useful for others to
-know.
+This application demonstrates how to use the Cloudant NoSQL DB service, with 
+the 'Liberty for Java™' runtime on IBM Bluemix Cloud.
 
-We have created an empty license.txt file for you. Well, actually, it says,
-"<Replace this text with the license you've chosen for your project.>" We 
-recommend you edit this and include text for license terms under which you're
-making your code available. A good resource for open source licenses is the 
-[Open Source Initiative](http://opensource.org/).
 
-Be sure to update your project's profile with a short description and 
-eye-catching graphic.
+You can deploy your own copy of this application using the button below:
 
-Finally, consider defining some sprints and work items in Track & Plan to give 
-interested developers a sense of your cadence and upcoming enhancements.
+[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://hub.jazz.net/git/idsorg/sample-java-cloudant)
+
+
+This repository is targeted by sample buttons in documentation such as
+the [Deploy to Bluemix button blog](https://developer.ibm.com/devops-services/2015/02/18/share-code-new-deploy-bluemix-button/).
+
+
+The repository content was originally borrowed from the official Bluemix Web Starter for Java Cloudant sample.
+Its WAR file got discarded in order to demonstrate the ability of the Deploy to Bluemix button 
+to dynamically compile from sources on deploy requests.
+
+This sample works because the code repository contains two interesting files:
+
+* An Ant build.xml file, at the root, which causes compilation and packaging of the Java 
+   code. 
+* A manifest.yml file at the root, which we augmented to trigger the backing service 
+   creation:
+      declared-services:
+        sample-java-cloudant-cloudantNoSQLDB:
+          label: cloudantNoSQLDB
+          plan: Shared
+
+
